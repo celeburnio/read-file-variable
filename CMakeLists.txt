@@ -4,4 +4,6 @@ project(read-file-variable VERSION 0.0.0)
 
 add_executable(${PROJECT_NAME} readVariableFile.cpp)
 
-install (TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_BINDIR})
+install (TARGETS ${PROJECT_NAME} 
+        RUNTIME DESTINATION bin
+        DESTINATION ${CMAKE_INSTALL_BINDIR})
