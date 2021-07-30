@@ -46,7 +46,9 @@ int main() {
     
 	retryReadVariable("CountryCode", countryCode);
 
-    syslog(LOG_INFO, "CountryCode readed:%s", countryCode.c_str());
+    syslog(LOG_INFO, "CountryCode readed: %s", countryCode.c_str());
 
+	std::transform(countryCode.begin(), countryCode.end(), countryCode.begin(), [](unsigned char c){ return std::tolower(c); });
+    syslog(LOG_INFO, "CountryCode after transform: %s", countryCode.c_str());
     return 0;
 }
